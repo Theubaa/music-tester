@@ -29,34 +29,42 @@
                 <div id="loader" class="ui disabled dimmer">
                     <div class="ui indeterminate text loader">Analyzing track... This may take a few seconds.</div>
                 </div>
-                <div id="danceability" class="classifier">
-                    <span>💃🏻</span>
-                    <div class="classifier-meter" data-classifier="Danceability"></div>
-                </div>
-                <div id="mood_happy" class="classifier">
-                    <span>😁</span>
-                    <div class="classifier-meter" data-classifier="Happy"></div>
-                </div>
-                <div id="mood_sad" class="classifier">
-                    <span>😢</span>
-                    <div class="classifier-meter" data-classifier="Sad"></div>
-                </div>
-                <div id="mood_relaxed" class="classifier">
-                    <span>😌</span>
-                    <div class="classifier-meter" data-classifier="Relaxed"></div>
-                </div>
-                <div id="mood_aggressive" class="classifier">
-                    <span>👊</span>
-                    <div class="classifier-meter" data-classifier="Aggressiveness"></div>
-                </div>
-                <div id="bpm-and-key">
-                    <div id="bpm" class="row-container">
-                        <div class="tag">BPM</div>
-                        <div id="bpm-value"></div>
+                
+                <div id="analysis-results" style="display: none;">
+                    <h3>📊 Analysis Results</h3>
+                    
+                    <div class="classifiers">
+                        <div id="danceability" class="classifier">
+                            <span>💃🏻 Danceability</span>
+                            <div class="classifier-meter" data-classifier="Danceability">0%</div>
+                        </div>
+                        <div id="mood_happy" class="classifier">
+                            <span>😁 Happy</span>
+                            <div class="classifier-meter" data-classifier="Happy">0%</div>
+                        </div>
+                        <div id="mood_sad" class="classifier">
+                            <span>😢 Sad</span>
+                            <div class="classifier-meter" data-classifier="Sad">0%</div>
+                        </div>
+                        <div id="mood_relaxed" class="classifier">
+                            <span>😌 Relaxed</span>
+                            <div class="classifier-meter" data-classifier="Relaxed">0%</div>
+                        </div>
+                        <div id="mood_aggressive" class="classifier">
+                            <span>👊 Aggressive</span>
+                            <div class="classifier-meter" data-classifier="Aggressiveness">0%</div>
+                        </div>
                     </div>
-                    <div id="key" class="row-container">
-                        <div class="tag">Key</div>
-                        <div id="key-value"></div>
+                    
+                    <div id="bpm-and-key">
+                        <div id="bpm" class="row-container">
+                            <div class="tag">BPM</div>
+                            <div id="bpm-value">-</div>
+                        </div>
+                        <div id="key" class="row-container">
+                            <div class="tag">Key</div>
+                            <div id="key-value">-</div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -65,6 +65,10 @@ function processFileUpload(files) {
 }
 
 function displayResults(analysis) {
+    // Show the results section
+    const resultsSection = document.getElementById('analysis-results');
+    resultsSection.style.display = 'block';
+    
     // Update BPM and Key
     document.getElementById('bpm-value').textContent = analysis.bpm;
     document.getElementById('key-value').textContent = analysis.key;
@@ -75,14 +79,18 @@ function displayResults(analysis) {
     updateMeter('mood_sad', analysis.mood.sad);
     updateMeter('mood_relaxed', analysis.mood.relaxed);
     updateMeter('mood_aggressive', analysis.mood.aggressive);
+    
+    console.log('Results displayed:', analysis);
 }
 
 function updateMeter(elementId, value) {
     const element = document.getElementById(elementId);
     const meter = element.querySelector('.classifier-meter');
     if (meter) {
-        meter.style.width = (value * 100) + '%';
-        meter.textContent = (value * 100).toFixed(1) + '%';
+        const percentage = (value * 100).toFixed(1);
+        meter.style.width = percentage + '%';
+        meter.textContent = percentage + '%';
+        console.log(`Updated ${elementId}: ${percentage}%`);
     }
 }
 
