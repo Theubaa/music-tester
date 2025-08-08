@@ -1,19 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "api/analyze.js",
-      "use": "@vercel/node"
+  "functions": {
+    "api/analyze.js": {
+      "runtime": "nodejs18.x"
     }
-  ],
+  },
   "rewrites": [
     {
       "source": "/api/health",
-      "destination": "/server.js"
+      "destination": "/api/health.js"
     },
     {
       "source": "/api/analyze",
@@ -21,7 +16,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/server.js"
+      "destination": "/index.html"
     }
   ]
 }
