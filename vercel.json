@@ -1,22 +1,31 @@
 {
   "version": 2,
-  "functions": {
-    "api/analyze.js": {
-      "runtime": "nodejs18.x"
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/analyze.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/health.js",
+      "use": "@vercel/node"
     }
-  },
-  "rewrites": [
+  ],
+  "routes": [
     {
-      "source": "/api/health",
-      "destination": "/api/health.js"
+      "src": "/api/health",
+      "dest": "/api/health.js"
     },
     {
-      "source": "/api/analyze",
-      "destination": "/api/analyze.js"
+      "src": "/api/analyze",
+      "dest": "/api/analyze.js"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
