@@ -23,12 +23,7 @@
     "url": "https://github.com/MTG/essentia.js"
   },
   "vercel": {
-    "outputDirectory": ".",
-    "functions": {
-      "api/analyze.js": {
-        "runtime": "nodejs18.x"
-      }
-    }
+    "outputDirectory": "."
   },
   "dependencies": {
     "express": "^4.18.2",
